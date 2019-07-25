@@ -1,6 +1,6 @@
 $(function() {
     $('button').click(function() {
-        var user = $('#txtUsername').val();
+        var userQuery = $('#txtquery').val();
 
         $.ajax({
             url: '/serialize',

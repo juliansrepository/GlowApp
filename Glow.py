@@ -18,17 +18,9 @@ def about():
 
 @app.route('/serialize', methods=['POST'])
 def serialize():
-    user =  request.form['username'];
-    return main_functions.save_to_file(user, 'query.json')
-        #json.dumps({'status':'OK','user':user,'pass':password});
+    userQuery = request.form['query'];
+    return json.dumps({'keyword': userQuery});
 
-
-""""
-#Adds about page
-@app.route('/about')
-def about():
-    return render_template('about.html')
-"""
 
 #Debug mode is turned on
 if __name__ == "__main__":
