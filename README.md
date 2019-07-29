@@ -5,3 +5,9 @@ It should display their product along with price and store location.
 
 We intended to add the feature of displaying make up tutorials made 
 by people who match that product.
+
+Lab 4 Teams Members:
+Julian Alarcon
+Danyal Fatmi
+John Marin
+Czamantha Bello

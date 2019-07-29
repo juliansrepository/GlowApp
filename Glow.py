@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, json
-import os
+import APImain
 import main_functions
+import os
 app = Flask(__name__)
+#app.config['SECRET KEY'] = 'GREG'
 
 #Adds home page
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
 
+    return render_template('home.html')
 
 
 @app.route('/about')
@@ -19,7 +21,13 @@ def about():
 @app.route('/serialize', methods=['POST'])
 def serialize():
     userQuery = request.form['query'];
-    return json.dumps({'keyword': userQuery});
+    main_functions.save_to_file(userQuery, 'query.json');
+    newQuery = main_functions.read_from_file("query.json")
+    APImain.query(newQuery)
+    json1 = "results_json0.json"
+    myData = main_functions.read_from_file(json1)
+    userData= myData["organic"][5]["url"]
+    return render_template('about.html', myData=myData)
 
 
 #Debug mode is turned on
