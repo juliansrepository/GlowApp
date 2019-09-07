@@ -41,6 +41,15 @@
         <button type="button">Search</button>
       </form>
      </div>
+	<div>
+		<article>
+            <div>
+                {% if myData %}
+                <p>{{ myData["organic"][5]["url"] }}</p>
+                {% endif %}
+            </div>
+        </article>>
+        </div>
 
 {% endblock %}
 

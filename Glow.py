@@ -3,7 +3,7 @@ import APImain
 import main_functions
 import os
 app = Flask(__name__)
-#app.config['SECRET KEY'] = 'GREG'
+
 
 #Adds home page
 @app.route('/')
@@ -26,7 +26,7 @@ def serialize():
     APImain.query(newQuery)
     json1 = "results_json0.json"
     myData = main_functions.read_from_file(json1)
-    userData= myData["organic"][5]["url"]
+    #userData= myData["organic"][5]["url"]
     return render_template('about.html', myData=myData)
 
 
